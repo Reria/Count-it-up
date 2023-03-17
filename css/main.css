@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-image: url('../img/bg.jpg');
-    background-position: center center;   
+    background-position: center;   
     background-repeat: no-repeat;      
     background-attachment: fixed;
     background-size: cover;
@@ -10,40 +14,44 @@ body {
     max-width: 100%;
     margin: 0 auto;
     font-family: 'Roboto', serif;
+    position: relative;
 }
 
-.wrapper {
+.app {
     padding-top: 40px;
+    padding-top: 31px;
+    padding-bottom: 15px;
+    height: 80vh;
 }
  
+.header{
+    overflow: hidden;
+}
 .header-content {
     display:flex;
     background-color: #fff;
     align-items: center;
-   justify-content: center;
-
-  
+   justify-content: center; 
 }
 .logo {
-    margin-right: 34px;
-    padding: 34px 0;
+    margin: 24px 34px 24px 0pc;
 }
 
 h1 {
     font-size: 24px;
-   
+    margin: 0;
 }
 
 .name-app {
     font-size: 24px;
     font-weight: 500;
-
 }
 
 main {
     background-color: rgba(255, 234, 234, 0.42);
     padding: 16px 16px 45px 16px;
-    display:flex;
+    display: flex;
+    height: calc(80hv - 80px);
 }
 
 .section-left {
@@ -61,7 +69,6 @@ form {
     justify-content: space-around;
     font-weight: 400;
     font-size: 16px;
-    
 }
 
 .name, .price, .add-button {
@@ -89,8 +96,7 @@ form {
 	text-align: center;
 	align-items: center;
 	opacity: 0.7;
-		
-
+    width: 100px;
 }
 
 .add-button:hover {
@@ -106,18 +112,32 @@ form {
     justify-content: stretch;
     padding: 0px 24px 0px 24px;
     border-collapse: collapse;
+    width: calc(100% - 68px);  
     overflow-y: scroll;
-    position: sticky;
+    height: 80%;
+}
+
+button {
+    background: none;
+}
+
+.delete svg path:hover {
+stroke:#262222;
+}
+
+.edit svg path:hover {
+    stroke:#262222;
+}
     
-} 
-
-
 th {
     padding: 14px 16px;
     background-color: #EBEBEB;
     text-align: center;
-   
-  
+}
+
+.table-header, .table-total {
+    position: sticky;
+    top:0;
 }
 
 .edit-button {
@@ -129,6 +149,7 @@ th {
     color: #fff;
     padding: 10px;
     font-size: 16px;
+    align-self: top;
 }
 
 .edit {
@@ -137,8 +158,6 @@ th {
 .edit:hover {
     text-decoration: none;
 	color: #fff;
-	
-    	
 }
 
 .delete {
@@ -150,15 +169,12 @@ th {
 }
 
 tr {
-   
     text-align: center;
     color:#7C7474;
-   
 }
 td {
     padding: 10px 5px;
 }
-
 
 .last {
     border-bottom:  2px solid  #ECE7E7;
@@ -167,25 +183,22 @@ td {
 .total {
     text-align: center;
     padding: 0px 24px 0px 24px;
-   
 }
 
 .table-total {
     text-align: center;
     font-weight: 700;
     padding: 10px 5px;
-
 }
-
 
 .section-right {
     background-color: #fff;
     border-radius: 8px;
     margin: 0;
     width: 350px;
-    height: 230px;
-    padding-right: 16px;
-  
+    height: 100%;
+    max-height: 250px;
+    padding-bottom: 10px;
 }
 
 .exchange-rate{
@@ -196,11 +209,12 @@ td {
     padding: 31px 20px 0;
     margin: 0 0 16px 0;
 }
+
 .table-exchange  {
     color:#7C7474;
     display: flex;
     justify-content: center;
     border-spacing: 0;
     text-align: center;
-    border-radius: 8px;;
+    border-radius: 8px;
 }
