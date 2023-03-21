@@ -11,12 +11,9 @@
         <meta name="keywords" content="Подсчитай (Count it up),cписок покупок,
             таблица покупок, создание списка покупок, стоимость покупок в разных
             валютах">
-
-
-
         <!-- Подключение сss файла и js файла  -->
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="js/main.js">
+        <script src="js/main.js"></script>
 
     </head>
 
@@ -44,7 +41,7 @@
                         <button type="button" class="add-button">Добавить</button>
                     </form>
 
-                    <table class="table" style="width: 100%; height: 80%;">
+                    <table class="table">
                         <tr class="table-header">
                             <th>Названиe покупки</th>
                             <th>Стоимость (idr)</th>
@@ -59,8 +56,8 @@
                             <td class="edit-button">
                                 <button type="button" class="edit">
                                     <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.8374 3.01575C12.1158 4.00418 12.6433 4.90458 13.3694 5.63069C14.0955 6.3568 14.9959 6.8843 15.9843 7.16266" 
-                                        stroke="#C1B0B0" stroke-width="1.25918" stroke-miterlimit="10" 
+                                        <path stroke="#C1B0B0"  d="M11.8374 3.01575C12.1158 4.00418 12.6433 4.90458 13.3694 5.63069C14.0955 6.3568 14.9959 6.8843 15.9843 7.16266" 
+                                        stroke-width="1.25918" stroke-miterlimit="10" 
                                         stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M12.7859 2.06714L6.17096 8.68205C5.91912 8.93389 5.66729 
                                         9.42917 5.61692 9.79013L5.25595 12.3169C5.12164
@@ -485,7 +482,7 @@
                                 </td>
                             </tr>
 
-                            <tr class="last">
+                            <tr>
                                 <td>Ананас</td>
                                 <td>40 000</td>
                                 <td>97</td>
@@ -534,8 +531,8 @@
                             </tr>
                         </table>
 
-                        <table class="total" style="width: 100%;">
-                            <tr class="table-total">
+                        <table class="total">
+                            <tr class="totaltd">
                                 <td style="width: 25%;">Итого</td>  
                                 <td style="width: 25%;"> 372 000 </td>
                                 <td style="width: 25%;"> 1 569 </td>

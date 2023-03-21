@@ -51,7 +51,7 @@ main {
     background-color: rgba(255, 234, 234, 0.42);
     padding: 16px 16px 45px 16px;
     display: flex;
-    height: calc(80hv - 80px);
+    height: calc(80vh - 80px);
 }
 
 .section-left {
@@ -59,7 +59,8 @@ main {
     width: 590px; 
     margin-right: 50px;
     border-radius: 8px;
-    padding-right: 39px;
+    height: 100%;
+    padding-bottom: 30px;
 }
 
 form {
@@ -112,30 +113,30 @@ form {
     justify-content: stretch;
     padding: 0px 24px 0px 24px;
     border-collapse: collapse;
-    width: calc(100% - 68px);  
-    overflow-y: scroll;
-    height: 80%;
+    height: calc(100% - 68px - 18px);  
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
 }
 
 button {
     background: none;
 }
 
-.delete svg path:hover {
-stroke:#262222;
-}
-
-.edit svg path:hover {
+.edit:hover svg path {
     stroke:#262222;
 }
-    
+
+.delete:hover svg path {
+    stroke:#262222;
+}
 th {
     padding: 14px 16px;
     background-color: #EBEBEB;
     text-align: center;
 }
 
-.table-header, .table-total {
+.table-header, .total {
     position: sticky;
     top:0;
 }
@@ -176,29 +177,37 @@ td {
     padding: 10px 5px;
 }
 
-.last {
-    border-bottom:  2px solid  #ECE7E7;
-}
 
-.total {
+
+.totaltd {
     text-align: center;
     padding: 0px 24px 0px 24px;
 }
 
-.table-total {
+.total {
     text-align: center;
     font-weight: 700;
     padding: 10px 5px;
+    border-top: 2px solid  #ECE7E7;
+    position: sticky;
+    bottom:0;
+    background-color: #fff;
+    width: 100%;
 }
+
+.total td {
+    width: 25%;
+}
+
 
 .section-right {
     background-color: #fff;
     border-radius: 8px;
     margin: 0;
-    width: 350px;
     height: 100%;
     max-height: 250px;
     padding-bottom: 10px;
+    overflow: auto;
 }
 
 .exchange-rate{
