@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto', serif;
+    position: relative;
+}
+
+.app {
+    padding-top: 40px;
+    padding-top: 31px;
+    padding-bottom: 15px;
+    height: 80vh;
+}
+
+.header {
+    overflow: hidden;
+}
+
+.header-content {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin: 24px 34px 24px 0pc;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.name-app {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+main {
+    background-color: rgba(255, 234, 234, 0.42);
+    padding: 16px 16px 45px 16px;
+    display: flex;
+    height: calc(80vh - 100px - 70px);
+}
+
+.section-left {
+    background-color: #fff;
+    width: 590px;
+    margin-right: 50px;
+    border-radius: 8px;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    padding: 32px 24px 0px 24px;
+    margin-bottom: 14px;
+    justify-content: space-around;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.name,
+.price,
+.add-button {
+    border: 1px solid #DEDDDD;
+    padding: 10px;
+}
+
+.name {
+    width: 248px;
+    margin-right: 9px;
+}
+
+.price {
+    width: 174px;
+    margin-right: 9px;
+}
+
+.add-button {
+    border: 1px solid #C9D1A8;
+    color: black;
+    text-decoration: none;
+    opacity: 0.7;
+    background-color: #C9D1A8;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    opacity: 0.7;
+    width: 100px;
+}
+
+.add-button:hover {
+    text-decoration: none;
+    background-color: #D84033;
+    border: 1px solid;
+    color: #fff;
+    transition: background-color.1s ease;
+}
+
+.table {
+    display: flex;
+    justify-content: stretch;
+    padding: 0px 24px 0px 24px;
+    border-collapse: collapse;
+    height: calc(100% - 68px - 18px - 77px);
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+}
+
+.table tbody {
+    overflow: auto;
+    height: 100%;
+    position: relative;
+}
+
+button {
+    background: none;
+}
+
+.edit:hover svg path {
+    stroke: #262222;
+}
+
+.delete:hover svg path {
+    stroke: #262222;
+}
+
+th {
+    padding: 14px 16px;
+    background-color: #EBEBEB;
+    text-align: center;
+}
+
+.table-header,
+.total {
+    position: sticky;
+    top: 0;
+    width: 25%;
+}
+
+.edit-button {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    align-self: top;
+}
+
+.edit {
+    border: 0;
+}
+
+.edit:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.delete {
+    border: 0;
+}
+
+.delete:hover {
+    border: none;
+}
+
+tr {
+    text-align: center;
+    color: #7C7474;
+}
+
+td {
+    padding: 10px 5px;
+    width: 25%;
+}
+
+.total-row {
+    text-align: center;
+    padding: 0px 24px 0px 24px;
+    width: 25%;
+}
+
+.total {
+    text-align: center;
+    font-weight: 700;
+    padding: 16px 24px;
+    border-top: 2px solid #ECE7E7;
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+}
+
+.section-right {
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 0;
+    height: 100%;
+    max-height: 250px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.exchange-rate {
+    text-align: center;
+    color: #262222;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 31px 20px 0;
+    margin: 0 0 16px 0;
+}
+
+.table-exchange {
+    color: #7C7474;
+    display: flex;
+    justify-content: center;
+    border-spacing: 0;
+    text-align: center;
+    border-radius: 8px;
+}
