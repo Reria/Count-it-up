@@ -51,7 +51,7 @@ main {
     background-color: rgba(255, 234, 234, 0.42);
     padding: 16px 16px 45px 16px;
     display: flex;
-    height: calc(80vh - 80px);
+    height: calc(80vh - 100px - 70px);
 }
 
 .section-left {
@@ -60,7 +60,6 @@ main {
     margin-right: 50px;
     border-radius: 8px;
     height: 100%;
-    padding-bottom: 30px;
 }
 
 form {
@@ -113,10 +112,16 @@ form {
     justify-content: stretch;
     padding: 0px 24px 0px 24px;
     border-collapse: collapse;
-    height: calc(100% - 68px - 18px);  
+    height: calc(100% - 68px - 18px - 77px);  
     overflow-y: auto;
     position: relative;
     width: 100%;
+}
+
+.table tbody {
+    overflow: auto;
+    height: 100%;
+    position: relative;
 }
 
 button {
@@ -139,11 +144,10 @@ th {
 .table-header, .total {
     position: sticky;
     top:0;
+    width: 25%;
 }
 
 .edit-button {
-    display: flex;
-    justify-content: space-evenly;
     appearance: none;
     border: 0;
     border-radius: 5px;
@@ -173,8 +177,10 @@ tr {
     text-align: center;
     color:#7C7474;
 }
+
 td {
     padding: 10px 5px;
+    width: 25%;
 }
 
 
@@ -187,7 +193,7 @@ td {
 .total {
     text-align: center;
     font-weight: 700;
-    padding: 10px 5px;
+    padding: 16px 24px;
     border-top: 2px solid  #ECE7E7;
     position: sticky;
     bottom:0;
