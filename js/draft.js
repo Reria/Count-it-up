@@ -39,6 +39,49 @@ const editTd = `<button type="button" class="edit">
     </svg>
 </button>`;
 
+const rows = [
+  {
+    id: 1,
+    item: "Молоко",
+    idrPrice: 10000,
+    rubPrice: 50,
+  },
+  {
+    id: 2,
+    item: "Хлеб",
+    idrPrice: 10000,
+    rubPrice: 50,
+  },
+  {
+    id: 3,
+    item: "Рис",
+    idrPrice: 10000,
+    rubPrice: 50,
+  },
+];
+
+const updateTable = function () {
+    for (let i=0; i<rows.length; i++) {
+        addRow(rows[i].item, rows[i].idrPrice, rows[i].rubPrice);
+    }
+    console.log("Таблица обновлена");
+};
+
+updateTable();
+
+function addRow(item, priceIdr, rubPrice) {
+  const myTable = document.getElementById("table");
+  const newRow = myTable.insertRow(-1);
+
+  const item1 = newRow.insertCell(0);
+  const priceIdr1 = newRow.insertCell(1);
+  const priceRub = newRow.insertCell(2);
+  const button1 = newRow.insertCell(3);
+  item1.innerHTML = item;
+  priceIdr1.innerHTML = priceIdr;
+  priceRub.innerHTML = rubPrice;
+  button1.innerHTML = editTd;
+}
 
 document.getElementById("add_argument").onsubmit = function (event) {
   event.preventDefault();
@@ -47,27 +90,12 @@ document.getElementById("add_argument").onsubmit = function (event) {
   const rubPrice = document.getElementById("price").value;
   const idrPrice = (rubPrice * 5) / 1000;
 
-  const tbody = document.querySelector("#table tbody");
-  const tr = document.createElement("tr");
+  rows.push({
+    id: rows.length + 1,
+    item: item,
+    idrPrice: idrPrice,
+    rubPrice: rubPrice,
+  });
 
-  let td = document.createElement("td");
-  td.innerText = item;
-  tr.append(td);
-
-  td = document.createElement("td");
-  td.innerText = rubPrice;
-  tr.append(td);
-
-  td = document.createElement("td");
-  td.innerText = idrPrice;
-  tr.append(td);
-
-  td = document.createElement("td");
-  td.innerHTML = editTd;
-
-  tr.append(td);
-
-  tbody.append(tr);
-
-  console.log(tbody);
+  addRow(item, idrPrice, rubPrice);
 };

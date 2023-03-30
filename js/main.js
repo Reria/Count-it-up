@@ -39,84 +39,23 @@ const editTd = `<button type="button" class="edit">
     </svg>
 </button>`;
 
-document.getElementById('submit').onclick = function() {row()};
-function row(item,priceIdr) {
-    var MyTable = document.getElementById("table") [0];
-    // insert new row.
-    var NewRow = MyTable.insertRow(-1);
-    console.log(MyTable)
-    var item1 = item1.insertCell(0);    
-    var priceIdr1 = priceIdr1.insertCell(1);
-    var priceRub = priceRub1.insertCell(2);
-    var button1 = button1.insertCell(3);
-    item1.innerHTML = item;
-    priceIdr1.innerHTML =  priceIdr;
-    priceRub.innerHTML =  priceIdr * 5 /1000;
-    button1.innerHTML = editTd;
-    console.log(item,priceIdr,priceRub,button1)
-}
----------------------------------------------
-
-const myProductValue = {
-    item: document.getElementById("item").value,
-    rubPrice: document.getElementById("price").value,
-    idrPrice: ((document.getElementById("price").value) * 5) / 1000
-}
-
-var tbody = document.querySelector('tbody');
-for(var i = 0; i < myProductValue.length; i++)
-{
-	var tr = document.createElement('tr');
-	tr.innerHTML =
-		'<td>' + myProductValue[i].item + '</td>' +
-		'<td>' + myProductValue[i].rubPrice + '</td>' +
-		'<td>' + myProductValue[i].idrPrice + '</td>';
-	tbody.appendChild(tr);
-}
-
----------------------------------------------
-
-const form = document.getElementById('add_argument')
-function getFormValue(event) {
+document.getElementById('submit').onclick = function myFn(event) {
     event.preventDefault();
-    let item = form.querySelector('[name="item"]'), //получаем поле item
-    price = form.querySelector('[name="price"]'); //получаем поле price 
-    let data = {
-        item: item.value,
-        price: price.value,
-        priceRub : ((price.value) *5 / 1000);}
-        return data;
-    };
 
-function row(data) {
-    const tbody = document.querySelector("#table tbody");
-    const tr = document.createElement("tr");
-    let td = data;
-    tr.append(td);
-    tbody.append(tr);
+    const myProductValue = {
+        item: document.getElementById("item").value,
+        rubPrice: document.getElementById("price").value,
+        idrPrice: ((document.getElementById("price").value) * 5) / 1000
     }
-------------------------------------------------------
 
 
-
-document.getElementById("add_argument").onsubmit = function (event) {
-    event.preventDefault();
-  
-    // const item = document.getElementById("item").value;
-    // const rubPrice = document.getElementById("price").value;
-    // const idrPrice = (rubPrice * 5) / 1000;
-  
-    const tbody = document.querySelector("#table tbody");
-    const tr = document.createElement("tr");
-  
-    let td = {
-        td1: (document.createElement("td")).innerText = document.getElementById("item").value,
-        td2: (document.createElement("td")).innerText = document.getElementById("price").value,
-        td3: (document.createElement("td")).innerText = (document.getElementById("price").value) * 5) / 1000,
-        td4: (document.createElement("td")).innerText =  editTd}
-    tr.append(td);
-    tbody.append(tr);
-    console.log(tbody);
-  };
-
+    var tbody = document.querySelector('tbody');
+    var tr = document.createElement('tr');
+    tr.innerHTML =
+        '<td>' + myProductValue.item + '</td>' +
+        '<td>' + myProductValue.rubPrice + '</td>' +
+        '<td>' + myProductValue.idrPrice + '</td>';
+    tbody.appendChild(tr);
     
+}
+
