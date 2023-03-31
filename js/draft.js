@@ -83,9 +83,8 @@ function addRow(item, priceIdr, rubPrice) {
   button1.innerHTML = editTd;
 }
 
-document.getElementById("add_argument").onsubmit = function (event) {
-  event.preventDefault();
-
+const add_new_row = function () {
+// код вынесен из обработчика нажатия на кнопку в отдельную функцию для удоюства
   const item = document.getElementById("item").value;
   const rubPrice = document.getElementById("price").value;
   const idrPrice = (rubPrice * 5) / 1000;
@@ -98,4 +97,13 @@ document.getElementById("add_argument").onsubmit = function (event) {
   });
 
   addRow(item, idrPrice, rubPrice);
+}
+
+
+document.getElementById("add_argument").onsubmit = function (event) {
+  event.preventDefault();
+  
+  updateTable();
+  //add_new_row();
+
 };
