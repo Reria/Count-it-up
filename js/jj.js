@@ -21,6 +21,8 @@ function row(item, priceIdr) {
   console.log(item, priceIdr, priceRub, button1);
 }
 
+
+
 //-------------------------------------------
 
 //---------------------------------------------

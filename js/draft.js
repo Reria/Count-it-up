@@ -39,7 +39,7 @@ const editTd = `<button type="button" class="edit">
     </svg>
 </button>`;
 
-const rows = [
+let rows = [
   {
     id: 1,
     item: "Молоко",
@@ -61,18 +61,19 @@ const rows = [
 ];
 
 const updateTable = function () {
-    for (let i=0; i<rows.length; i++) {
-        addRow(rows[i].item, rows[i].idrPrice, rows[i].rubPrice);
-    }
-    console.log("Таблица обновлена");
+  for (let i = 0; i < rows.length; i++) {
+    renderRow(i + 1, rows[i].item, rows[i].idrPrice, rows[i].rubPrice);
+  }
+  console.log("Таблица обновлена");
 };
 
 updateTable();
 
-function addRow(item, priceIdr, rubPrice) {
+function renderRow(id, item, priceIdr, rubPrice) {
   const myTable = document.getElementById("table");
   const newRow = myTable.insertRow(-1);
 
+  newRow.id = id;
   const item1 = newRow.insertCell(0);
   const priceIdr1 = newRow.insertCell(1);
   const priceRub = newRow.insertCell(2);
@@ -84,7 +85,7 @@ function addRow(item, priceIdr, rubPrice) {
 }
 
 const add_new_row = function () {
-// код вынесен из обработчика нажатия на кнопку в отдельную функцию для удоюства
+  // код вынесен из обработчика нажатия на кнопку в отдельную функцию для удоюства
   const item = document.getElementById("item").value;
   const rubPrice = document.getElementById("price").value;
   const idrPrice = (rubPrice * 5) / 1000;
@@ -96,14 +97,47 @@ const add_new_row = function () {
     rubPrice: rubPrice,
   });
 
-  addRow(item, idrPrice, rubPrice);
-}
-
+  renderRow(rows.length + 1, item, idrPrice, rubPrice);
+};
 
 document.getElementById("add_argument").onsubmit = function (event) {
   event.preventDefault();
-  
-  updateTable();
-  //add_new_row();
 
+  add_new_row();
 };
+
+rows.forEach((id) => console.log(id.name));
+
+// const buttonsEdit = document.getElementsByClassName('edit');
+// for (const button of buttonsEdit) {
+//   button.addEventListener('click', () => alert('Edit'));
+// }
+
+// const buttonsDelete = document.getElementsByClassName('delete');
+// for (const button of buttonsDelete) {
+//   button.addEventListener('click', () => alert('Delete'));
+// }
+
+const table = document.getElementById("table");
+
+table.addEventListener("click", (event) => {
+  const button = event.target.closest("button");
+  if (!button) return;
+  const tr = event.target.closest("tr");
+  console.log(button.className);
+  console.log(tr.id);
+
+  rows = rows.filter((item) => item.id != tr.id);
+  clearTable();
+  updateTable();
+
+});
+
+function clearTable() {
+  const myTable = document.getElementById("table");
+  const rowCount = table.rows.length;
+  for (var i = 1; i < rowCount; i++) {
+    table.deleteRow(1);
+  }
+
+}
